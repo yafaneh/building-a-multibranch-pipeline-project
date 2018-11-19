@@ -16,9 +16,9 @@ pipeline {
                 branch 'development'
             }
             steps {
-                bat './jenkins/scripts/deliver-for-development.sh'
+                bat '/jenkins/scripts/deliver-for-development.sh'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                bat './jenkins/scripts/kill.sh'
+                bat '/jenkins/scripts/kill.sh'
             }
         }
         stage('Deploy for production') {
@@ -26,9 +26,9 @@ pipeline {
                 branch 'production'
             }
             steps {
-                bat './jenkins/scripts/deploy-for-production.sh'
+                bat '/jenkins/scripts/deploy-for-production.sh'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                bat './jenkins/scripts/kill.sh'
+                bat '/jenkins/scripts/kill.sh'
             }
         }
     }
